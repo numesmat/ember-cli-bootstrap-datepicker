@@ -67,7 +67,7 @@ export default Ember.Mixin.create({
     this.sendAction('changeDate', value);
   },
 
-  _didChangeLanguage: Ember.observer('language', function() {
+  _didChangeLanguage: Ember.observer('language', 'startDate', 'endDate', function() {
     this.$().datepicker('remove');
     this.setupBootstrapDatepicker();
   }),
